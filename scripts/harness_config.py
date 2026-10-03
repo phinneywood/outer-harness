@@ -111,8 +111,9 @@ def render(config, locator, role):
     if mode:
         result += f" and mode={mode}"
     result += '.\n\n'
-    result += (f"Discover and read the installed skill through its native reader. If unavailable, use the connected GitHub tool to fetch skills/{skill}/SKILL.md from {source['repository']} at ref {source['ref']} and follow those actual loaded instructions. Fetch and read the private config and its required current policies/checkpoint before acting. If any required load fails, report the exact operation/error, leave dependent writes pending and do not advance progress. Do not reconstruct instructions from memory.\n\n"
+    result += (f"Discover and read the installed skill through its native reader. If unavailable or stale compared with the configured policy/release, use the connected GitHub tool to fetch skills/{skill}/SKILL.md from {source['repository']} at ref {source['ref']} and follow those actual loaded instructions. Fetch and read the private config and its required current policies/checkpoint before acting. If any required load fails, report the exact operation/error, leave dependent writes pending and do not advance progress. Do not reconstruct instructions from memory.\n\n"
                'Use connected MCP tools only and the configured assistant account. Preserve action permissions and source-system boundaries. Verify every write by readback. Report all errors. Do not create replacement jobs, change schedules or reactivate disabled tasks.\n')
+    result += ('Keep Trello absent by default outside daily or explicitly requested portfolio review. Use the smallest relevant source; narrow completion/reconciliation reads only relevant cards and bounded discovery. Record only material project-state changes at meaningful stopping points and read writes back. Keep concise reusable knowledge in the knowledge repository, substantial documents in Drive, implementation/checkpoints in project repositories, and operational state in Trello.\n')
     if role == 'daily':
         result += 'Send the configured compact daily briefing; perform the policy’s deeper weekly review on the configured local weekday.\n'
     else:

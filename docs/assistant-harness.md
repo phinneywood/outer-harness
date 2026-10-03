@@ -10,6 +10,10 @@ The version 1 profile supports GitHub knowledge, Trello project state, assistant
 
 Use a short standing bootstrap based on `examples/assistant-harness/bootstrap.txt`. Installing a skill does not make every chat load it. For substantial writing, retain your authorial-boundary instructions and writing workflow separately.
 
+## Retrieval and durable storage
+Keep Trello absent by default from new chats, general questions and resumed implementation/document work. Use the smallest relevant source for the actual task. Read a targeted card only when project state is required or a material change must be safely reconciled. Whole-board reads belong to scheduled daily or explicitly requested portfolio reviews; completion/email workflows use relevant known work and bounded discovery. Reuse context, batch routine material updates at meaningful stopping points, promptly record blockers/commitments, and verify changed cards.
+Keep concise reusable facts, preferences, standing decisions and outcomes in private knowledge; substantial research/requirements/plans/comparisons/artifacts in Drive; implementation and technical execution checkpoints in project repositories; operational state and pointers in Trello. Link a brief reusable takeaway to its substantial source instead of duplicating it. Preserve unique content before an authorized move or shortening. Reduced calls do not prove an unrelated rendering defect is fixed.
+
 ## Build and install
 
 Build with `python3 scripts/build_plugin.py assistant-harness --skills assistant-harness portfolio-pm knowledge-reconcile harness-audit`. The archive contains only the manifest and reviewed skills; private config and account connection mappings are excluded.

@@ -16,6 +16,9 @@ Report separate gates: source saved; static validity; stored personal skill; ins
 
 Check diverging policy copies/conflicting authority/enabled duplicates/stale installs/unsafe permissions/overlapping daily versus event/narrow watches/orphaned pointers/excessive polling. Recommend smallest repair. Do not auto-uninstall/disable/edit global instructions/widen permissions/delete records just because they look stale.
 
+## Retrieval and storage audit
+Check that project state is absent by default from new/general/resumed-work chats. Whole-board access is reserved for the daily portfolio review or an explicitly requested portfolio review; narrow completion/email reconciliation uses relevant cards and bounded discovery. Do not load the board merely to audit configuration. Check material-change-only writes and readbacks, concise reusable knowledge versus substantial Drive documents, and project repositories for implementation/checkpoints. Do not rewrite/reorganize existing content to satisfy these checks without authorization.
+
 ## Authorized migration
 Act only within requested/existing authorization. Resolve existing identities and search configs/notes/cards first. Shared repository owns procedures; private config owns account targets; native registrations own schedules. Use existing plugins rather than another user's bundled connection IDs.
 
