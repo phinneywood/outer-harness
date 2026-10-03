@@ -1,0 +1,11 @@
+interface:
+  display_name: 'Pocock: Handoff'
+  short_description: Matt Pocock workflow adapted for ChatGPT
+  default_prompt: Use @pocock-handoff to prepare a handoff for this conversation.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: false
+  products:
+  - CHAT
+  - CODEX

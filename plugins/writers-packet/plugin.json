@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "writers-packet",
+  "version": "1.0.0",
+  "description": "Prepare evidence, sources, questions, and structure for human authorship.",
+  "author": {
+    "name": "Antonio Skilton"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Writer’s Packet",
+        "shortDescription": "Prepare to write in your own words",
+        "longDescription": "Research and organize a writer’s packet while preserving human authorship. Provides evidence, sources, questions, counterarguments, and structure. Drafts or rewrites only on explicit request. Inspired by Thomas Ptacek’s How To Write With An LLM.",
+        "developerName": "Antonio Skilton",
+        "category": "Productivity",
+        "capabilities": [
+          "Prepare a writer’s packet",
+          "Review drafts without replacement prose",
+          "Compare supplied passages"
+        ]
+      }
+    }
+  }
+}

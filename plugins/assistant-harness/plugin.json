@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "assistant-harness",
+  "version": "1.0.0",
+  "description": "Recover context, reconcile projects and knowledge, and audit a personal assistant setup using existing connected services.",
+  "author": {"name": "Antonio Skilton"},
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Assistant Harness",
+        "shortDescription": "Maintain continuity across your work",
+        "longDescription": "Use private configuration and existing connections to recover authoritative context, maintain project and knowledge records, organize documents, and verify scheduled workflows. Connections and schedules are configured separately for each user.",
+        "developerName": "Antonio Skilton",
+        "category": "Productivity",
+        "capabilities": ["Recover authoritative context", "Review and reconcile projects", "Maintain external knowledge", "Audit assistant configuration"]
+      }
+    }
+  }
+}

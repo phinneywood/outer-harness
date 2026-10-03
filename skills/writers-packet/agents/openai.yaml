@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writer’s Packet"
+  short_description: "Evidence and structure for writing in your own words"
+  default_prompt: "Use $writers-packet to prepare the sources, evidence, questions, and structure I need to write this myself."

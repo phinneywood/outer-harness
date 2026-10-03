@@ -1,0 +1,14 @@
+interface:
+  display_name: chatgpt-plugin-factory
+  short_description: Build, validate, and release skills for ChatGPT Work.
+  default_prompt: Use $chatgpt-plugin-factory to build and verify a reusable ChatGPT
+    skill or plugin from this workflow.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

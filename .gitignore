@@ -1,0 +1,9 @@
+dist/
+__pycache__/
+*.pyc
+
+# Account-specific deployment state and credentials
+.env
+.env.*
+private/
+*.local.json

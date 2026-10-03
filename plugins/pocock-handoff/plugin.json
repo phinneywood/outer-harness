@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pocock-handoff",
+  "version": "1.0.1",
+  "description": "Create concise, durable handoffs that let a fresh conversation resume work with source pointers and next actions.",
+  "author": {
+    "name": "Antonio Skilton"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Pocock Handoff",
+        "shortDescription": "Prepare a resumable handoff",
+        "longDescription": "Summarize the current conversation for another agent, preserve decisions and source pointers, and name the next action.",
+        "developerName": "Antonio Skilton",
+        "category": "Productivity",
+        "capabilities": [
+          "Create a durable handoff document"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,194 @@
+Share
+You said:
+Discover the installed Writer’s Packet plugin and its writers-packet skill through your native skill catalog, then read its installed SKILL.md with the native skill reader. Do not use web search, GitHub, prior chats, or an attached copy. Report whether discovery and reading actually succeeded, the package/version if exposed, and two distinctive instructions plus the article credited in the installed file. Do not create a packet yet.
+ChatGPT said:
+
+Discovery and reading status:
+
+Skill discovery: Succeeded. I discovered the installed skill through the native skill catalog as writers-packet at skills://plugins/writers-packet/writers-packet.
+SKILL.md reading: Succeeded. I read the installed SKILL.md through the native skill reader.
+Package/version: The installed file exposes the skill name (writers-packet) but does not expose a package name or version number.
+
+Two distinctive instructions from the installed file:
+
+Do not treat “help me write,” “prepare a page,” or “I need a LinkedIn post” as permission to provide publication prose. The skill instructs the assistant to provide preparation materials instead—such as evidence, questions, structures, and analysis—unless the user explicitly requests drafting or rewriting.
+
+Keep authorial ownership with the writer. The skill instructs the assistant not to invent the writer’s opinions, experiences, accomplishments, emotions, or thesis, and to separate verified facts, supplied assertions, interpretations, and open questions.
+
+Article credited in the installed file:
+
+The skill credits Thomas Ptacek’s “How To Write With An LLM” (A Final Ward, September 17, 2026) as inspiration. It states that the workflow adapts ideas around using models to locate writing problems, avoiding adoption of model phrasing, and resisting encouragement that prematurely locks in weak choices.
+
+No packet was created.
+
+You said:
+Read the installed writers-packet SKILL.md again using the native skill reader now. Provide the exact tool name and arguments you actually used, and quote the complete instruction beginning “Honor an explicit drafting request” from the tool result. If the call cannot be made, say so. Do not substitute a recollection or browse elsewhere.
+ChatGPT said:
+
+The native skill reader call succeeded.
+
+Exact tool used:
+
+Tool name: api_tool.read_resource
+Arguments:
+JSON
+{
+  "uri": "skills://plugins/writers-packet/writers-packet/SKILL.md",
+  "start_line": 1,
+  "num_lines": 200
+}
+
+The instruction beginning “Honor an explicit drafting request” from the tool result is:
+
+Honor an explicit drafting request for its stated scope. A request to rewrite one paragraph does not authorize rewriting the whole piece or future tasks. Leave packet mode for that requested drafting task rather than refusing it.
+
+The read result came from the installed skill resource, not from web search, GitHub, prior chats, or an attached copy.
+
+You said:
+Use the installed Writer’s Packet skill for the following seven independent, fictional exercises. Answer each request itself, labeled A–G, rather than describing how you would answer. Treat permissions within each exercise as local to that exercise. Keep each answer compact, use only the supplied facts, and do not change files or send/publish anything.
+
+A. Help me write a portfolio page about a volunteer library catalog tool. I built a search interface for three neighborhood volunteers; it imports a weekly CSV; two volunteers used it for six weeks; time savings have not been measured. Audience: hiring managers.
+B. Help me with a whitepaper about adopting the same tool. Audience: community organizers. Those are the only facts available.
+C. I need a LinkedIn post about that tool. Same facts.
+D. Here is my draft; critique it: “My new catalog tool revolutionized the library. Two volunteers tried it for six weeks. It obviously saves everyone hours. The search interface imports a CSV weekly. This changes everything.”
+E. Which paragraph works better for a portfolio page? Option one: “I built a search interface that imports the volunteer library catalog from a weekly CSV. Two volunteers tried it for six weeks; time savings have not been measured.” Option two: “A revolutionary interface transformed volunteer productivity and created unprecedented community impact.”
+F. Rewrite this paragraph: “The catalog imports happen weekly, and the interface was made by me, and two people tested the thing for six weeks.”
+G. Draft a short contractor email asking whether the replacement curtain track has arrived. Write as my assistant; do not send it.
+…
+Show more
+ChatGPT said:
+A. Portfolio page preparation (Writer’s Packet)
+
+Purpose and audience
+
+Purpose: Help hiring managers understand the volunteer library catalog tool.
+Audience: Hiring managers evaluating technical ability and impact.
+
+Verified facts
+
+Built a search interface for three neighborhood volunteers.
+Tool imports a weekly CSV.
+Two volunteers used it for six weeks.
+Time savings have not been measured.
+
+Possible structure
+
+Problem/context: Volunteer library catalog workflow.
+Solution: Search interface and CSV import workflow.
+Adoption: Two volunteers used the tool for six weeks.
+Measurement gap: Time savings remain unmeasured.
+
+Questions requiring your input
+
+What problem did volunteers have before the tool existed?
+What technical decisions or constraints are important for a hiring manager to understand?
+B. Whitepaper preparation (Writer’s Packet)
+
+Purpose and audience
+
+Purpose: Explore adoption of the tool.
+Audience: Community organizers.
+
+Available facts
+
+A search interface exists.
+It imports a weekly CSV.
+It was used by two volunteers for six weeks.
+No time savings measurement exists.
+
+Possible discussion areas
+
+Volunteer workflow needs.
+Adoption considerations.
+Operational process for maintaining weekly imports.
+Evidence available vs. evidence still needed.
+
+Evidence limitation
+
+There is no supplied evidence about broader community outcomes, costs, implementation effort, or adoption barriers.
+C. LinkedIn post preparation (Writer’s Packet)
+
+Purpose and audience
+
+Purpose: Prepare a professional post about the tool.
+Audience: LinkedIn audience.
+
+Facts available
+
+Built a search interface for a volunteer library catalog.
+Weekly CSV import.
+Two volunteers used it for six weeks.
+Time savings are not measured.
+
+Questions to answer before drafting
+
+What personal motivation or lesson should the post communicate?
+What professional skill should readers understand from this example?
+
+Avoid claiming
+
+Proven time savings.
+Broad library impact.
+Community transformation.
+D. Draft critique
+
+Passage: “My new catalog tool revolutionized the library.”
+
+Problem: “Revolutionized” claims an outcome not supported by the facts.
+Editing action: Replace with a factual description of what was built and used.
+
+Passage: “Two volunteers tried it for six weeks.”
+
+Strength: Matches the supplied evidence.
+Editing action: Consider clarifying that this was a trial or usage period if relevant.
+
+Passage: “It obviously saves everyone hours.”
+
+Problem: Claims measured impact that does not exist.
+Editing action: Remove or replace with a statement that time savings have not been measured.
+
+Passage: “The search interface imports a CSV weekly.”
+
+Strength: Concrete description of functionality.
+Editing action: Keep.
+
+Passage: “This changes everything.”
+
+Problem: Broad conclusion unsupported by evidence.
+Editing action: Replace with a specific observation or remove.
+E. Paragraph comparison
+
+Option one works better for a portfolio page based on the supplied facts.
+
+Reason:
+
+It describes actual work performed.
+It includes the known usage period.
+It avoids claiming unmeasured outcomes.
+
+Tradeoff:
+
+Option two is more ambitious in tone, but it makes claims about productivity and impact that are not supported by the available evidence.
+F. Rewrite
+Catalog Tool Paragraph Rewrite
+
+The catalog interface imports weekly CSV updates and provides a search experience for the volunteer library catalog. Two volunteers tested the tool over a six-week period.
+
+G. Contractor email draft
+Email
+Send
+Recipients
+
+Hi,
+
+I’m checking in to see whether the replacement curtain track has arrived. Could you let me know the current status when you have a chance?
+
+Thank you.
+
+Latest response
+
+
+
+
+Medium
+ChatGPT can make mistakes. Check important info.

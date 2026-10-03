@@ -1,0 +1,14 @@
+interface:
+  display_name: Distill
+  short_description: Compress answers without losing what matters
+  default_prompt: Use $distill to compress the previous answer into the shortest useful
+    standalone artifact and a brief explanation.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

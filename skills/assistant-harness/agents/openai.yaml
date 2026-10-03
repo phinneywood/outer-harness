@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assistant Harness"
+  short_description: "Recover context and route durable assistant work"
+  default_prompt: "Use $assistant-harness to resume my work from its authoritative sources."

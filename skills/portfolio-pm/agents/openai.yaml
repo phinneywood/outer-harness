@@ -1,0 +1,4 @@
+interface:
+  display_name: "Portfolio PM"
+  short_description: "Reconcile projects and choose useful next actions"
+  default_prompt: "Use $portfolio-pm to review my portfolio and identify today’s priorities."
