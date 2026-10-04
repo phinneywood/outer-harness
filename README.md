@@ -1,8 +1,12 @@
 # Outer Harness
 
-**Reusable instructions and checks for keeping a ChatGPT assistant oriented across ongoing work.**
+**Pick up where you left off.**
 
-An assistant may help with a project today, then need the same background again next week. Decisions can end up scattered across chats, task boards, notes and documents. Outer Harness defines where those records belong, which ones the assistant should consult, what it may update, and how it should check the result.
+Give your AI assistant a way to follow ongoing projects, preserve useful decisions, and keep work moving across conversations.
+
+An **outer harness** is a set of instructions and tools that guides an AI assistant’s work.
+
+Decisions can end up scattered across chats, task boards, notes and documents. Outer Harness defines where those records belong, which ones the assistant should consult, what it may update, and how it should check the result.
 
 This is an experimental personal workflow project. It contains written procedures called **skills**, a configuration checker, a tool for preparing scheduled-task instructions, and a plugin package builder. ChatGPT and its connected services carry out the work. Account connections and schedules are set up separately.
 
