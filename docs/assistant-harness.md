@@ -16,11 +16,11 @@ Keep concise reusable facts, preferences, standing decisions and outcomes in pri
 
 ## Build and install
 
-Build with `python3 scripts/build_plugin.py assistant-harness --skills assistant-harness portfolio-pm knowledge-reconcile harness-audit`. The archive contains only the manifest and reviewed skills; private config and account connection mappings are excluded.
+Build with `python3 scripts/build_plugin.py assistant-harness --skills assistant-harness portfolio-pm knowledge-reconcile harness-audit`. The archive contains only the manifest and reviewed skills; private config and account connection mappings are excluded. The current package manifest is **1.1.0**; see `releases/assistant-harness-1.1.0.md` for release-specific validation and limits.
 
 Personal Work skills and cloud plugins are separate installations. Use the supported skill-creator workflow for personal installation. For ordinary Chat, upload the archive through ChatGPT Plugins → Personal → Add → Upload plugin archive, install it, and test in a fresh Chat. Keep one installed identity for future updates. Public Directory submission/review is a separate operation; no public listing is implied by this repository.
 
-For ordinary Chat, explicitly select Assistant Harness and the service plugins needed for the work (for example, GitHub and Trello), and supply your private `config_locator`. The verified 1.0.0 recovery test loaded all four skills, then read real configuration/project records with GitHub and Trello selected. The initial harness-only attempt did not activate record tools. Installing a skills-only plugin does not activate every connected service. See `releases/assistant-harness-1.0.0.md` for surface-specific evidence; iOS and ordinary Chat writes require separate tests.
+For ordinary Chat, explicitly select Assistant Harness and the service plugins needed for the work (for example, GitHub and Trello), and supply your private `config_locator`. The original 1.0.0 recovery test loaded all four skills, then read real configuration/project records with GitHub and Trello selected; that remains historical evidence for that package. Version 1.1.0 changes scoped retrieval policy and has its own static release validation, but native-reader loading, automatic activation, ordinary-Chat write behavior and device-specific behavior should be verified separately after upgrading. Installing a skills-only plugin does not activate every connected service. See `releases/assistant-harness-1.0.0.md` and `releases/assistant-harness-1.1.0.md` for the evidence recorded for each release.
 
 Current official instructions: https://developers.openai.com/plugins/build/plugins and https://learn.chatgpt.com/docs/build-skills. GitHub source changes alone do not update an uploaded plugin.
 
@@ -40,4 +40,4 @@ Accept context recovery only when a fresh conversation reads the current authori
 
 ## Repository hygiene
 
-Run the existing `harness-audit` skill with the [repository hygiene procedure](repository-hygiene.md) loaded from a pinned source revision. Keep target repositories, policy exceptions, checkpoints and the task registration in private configuration. Schedule a separate low-frequency read-only audit unless an existing audit already covers it; preserve other registrations. This adds a shared scheduled recipe without changing the installed four-skill 1.0.0 package.
+Run the existing `harness-audit` skill with the [repository hygiene procedure](repository-hygiene.md) loaded from a pinned source revision. Keep target repositories, policy exceptions, checkpoints and the task registration in private configuration. Schedule a separate low-frequency read-only audit unless an existing audit already covers it; preserve other registrations. This adds a shared scheduled recipe without changing the four-skill package.
