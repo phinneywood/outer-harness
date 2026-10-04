@@ -16,7 +16,7 @@ Reusable operating skills for a ChatGPT assistant: recover context, maintain pro
 | `skills/chatgpt-plugin-factory` | Build, install and verify skill packages |
 | `docs/`, `examples/`, `scripts/`, `tests/` | Setup, repository hygiene, private-config templates, package builder and fixtures |
 
-The **Assistant Harness 1.0.0** plugin bundles the first four skills. Writer’s Packet and Pocock Handoff retain their own package manifests. Utility source in this repository does not add skills to an existing installed plugin.
+The **Assistant Harness 1.1.0** plugin bundles the first four skills. Writer’s Packet and Pocock Handoff retain their own package manifests. Utility source in this repository does not add skills to an existing installed plugin.
 
 ## Get started
 
@@ -37,7 +37,7 @@ The package contains no account connections, private policies, task registration
 
 This repository owns the harness and general assistant utilities. Long Form integrations belong with [Long Form](https://github.com/phinneywood/long-form), and strategy companions belong with [Strategy Factory](https://github.com/phinneywood/strategy-factory). The original [chatgpt-plugins collection](https://github.com/phinneywood/chatgpt-plugins) retains earlier releases during the transition.
 
-See [the source migration record](docs/source-migration-2026-10-03.md) for provenance and verification limits. Fresh ordinary Chat reads were verified for 1.0.0; iOS, automatic activation and ordinary Chat mutation workflows remain separate checks.
+See [the source migration record](docs/source-migration-2026-10-03.md) for provenance and verification limits. Assistant Harness 1.1.0 is the current packaged release. The 1.0.0 ordinary-Chat read verification remains historical evidence; native runtime, automatic activation, write behavior and device-specific verification remain separate gates after an upgrade.
 
 ## License and privacy
 
