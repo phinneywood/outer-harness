@@ -1,46 +1,67 @@
 # Outer Harness
 
-Reusable operating skills for a ChatGPT assistant: recover context, maintain project and knowledge records, and audit the setup using existing connected services.
+**Reusable instructions and checks for keeping a ChatGPT assistant oriented across ongoing work.**
 
-## What's here
+An assistant may help with a project today, then need the same background again next week. Decisions can end up scattered across chats, task boards, notes and documents. Outer Harness defines where those records belong, which ones the assistant should consult, what it may update, and how it should check the result.
 
-| Source | Purpose |
+This is an experimental personal workflow project. It contains written procedures called **skills**, a configuration checker, a tool for preparing scheduled-task instructions, and a plugin package builder. ChatGPT and its connected services carry out the work. Account connections and schedules are set up separately.
+
+## A concrete example
+
+Suppose you ask: “What remains on the website update?”
+
+| Step | What the assistant should do |
 | --- | --- |
-| `skills/assistant-harness` | Recover authoritative context and route work |
-| `skills/portfolio-pm` | Project reconciliation, daily briefings and completion checks |
-| `skills/knowledge-reconcile` | Maintain external knowledge and organize assistant documents |
-| `skills/harness-audit` | Configuration, installation, scheduling and repository audits |
-| `skills/writers-packet` | Prepare evidence and questions for substantial writing |
-| `skills/pocock-handoff` | Prepare a project handoff; retains upstream MIT license |
-| `skills/distill` | Compress an answer into the essential points |
-| `skills/chatgpt-plugin-factory` | Build, install and verify skill packages |
-| `docs/`, `examples/`, `scripts/`, `tests/` | Setup, repository hygiene, private-config templates, package builder and fixtures |
+| Recover the context | Read the relevant project record and follow its source links. |
+| Check the facts | Inspect the repository or live page when the question requires implementation evidence. |
+| Keep records in the right place | Task status stays in the task board; code and technical evidence stay in the repository. |
+| Respect the request | A status question does not authorize publishing a change. An approved update may change the relevant records. |
+| Verify an update | Read changed records back before reporting success. |
 
-The **Assistant Harness 1.1.0** plugin bundles the first four skills. Writer’s Packet and Pocock Handoff retain their own package manifests. Utility source in this repository does not add skills to an existing installed plugin.
+This table illustrates the intended workflow; it is not evidence of a completed live run. See the [worked example and verification record](docs/worked-example.md) for the distinction between a local demonstration, recorded runtime results and pending checks.
 
-## Get started
+## The four core workflows
 
-Read [setup and verification](docs/assistant-harness.md). Supply your own private configuration, current policies and authorized GitHub, Trello and assistant Google connections. Configuration examples contain placeholders and grant no maintenance permissions.
+The downloadable **Assistant Harness** plugin bundles these four skills:
 
-Build the core package:
+| Workflow | Everyday purpose |
+| --- | --- |
+| Recover context | Pick up ongoing work from its current records. |
+| Manage projects | Keep outcomes, next actions and blockers current; prepare a daily review. |
+| Maintain knowledge | Preserve useful facts and decisions, and organize assistant-owned documents. |
+| Audit the setup | Check configuration, installations, schedules and repository hygiene. |
 
-```sh
-python3 scripts/build_plugin.py assistant-harness --skills assistant-harness portfolio-pm knowledge-reconcile harness-audit
-python3 -m unittest discover -s tests -p 'test_harness_config.py' -v
-```
+The supported setup uses GitHub for durable notes, Trello for project state, Google Drive for documents, and an assistant-managed Google Calendar for confirmed commitments. The [source-role guide](docs/assistant-harness.md#retrieval-and-durable-storage) explains the boundaries.
 
-The verified package is also in [releases](releases/). Upload the archive through ChatGPT's plugin installation flow, or use the supported personal skill workflow in Work. Updating GitHub source does not update installed plugins, personal skills or saved task pins automatically. Keep one installation identity when upgrading.
+## Understand it or try it
 
-The package contains no account connections, private policies, task registrations, credentials, server or database. Schedules are created separately in each user's account. Other personal reading, cleanup and specialty watches are outside the core package.
+- **Start with the design:** [worked example](docs/worked-example.md) and [glossary](docs/worked-example.md#glossary).
+- **Try the tools locally:** [first-run guide](docs/first-run.md#try-the-local-tools), using synthetic configuration and no connected accounts.
+- **Use it with ChatGPT:** follow the [read-only first-run guide](docs/first-run.md#use-it-with-chatgpt). Bring your own private configuration, policies and authorized service connections.
+- **Download the package:** [Assistant Harness 1.1.1 ZIP](releases/assistant-harness-1.1.1.zip), with its [release record](releases/assistant-harness-1.1.1.md).
 
-## Source ownership
+## What is verified
 
-This repository owns the harness and general assistant utilities. Long Form integrations belong with [Long Form](https://github.com/phinneywood/long-form), and strategy companions belong with [Strategy Factory](https://github.com/phinneywood/strategy-factory). The original [chatgpt-plugins collection](https://github.com/phinneywood/chatgpt-plugins) retains earlier releases during the transition.
+The configuration and packaging tests check code behavior and archive contents. They do not establish that an assistant will follow every instruction, that scheduled work will execute reliably, or that every device supports the same installation flow.
 
-See [the source migration record](docs/source-migration-2026-10-03.md) for provenance and verification limits. Assistant Harness 1.1.0 is the current packaged release. The 1.0.0 ordinary-Chat read verification remains historical evidence; native runtime, automatic activation, write behavior and device-specific verification remain separate gates after an upgrade.
+The [1.1.0 record](releases/assistant-harness-1.1.0.md) covers static and prepare-only checks; the [1.0.0 record](releases/assistant-harness-1.0.0.md) contains earlier, separately scoped runtime evidence. **1.1.1 repairs packaging and onboarding; it does not add a new runtime or prove unattended reliability.** Installing an updated package remains separate from updating this repository.
+
+Permission settings and skills guide the assistant. They do not intercept tool calls or replace the host's permissions and approval controls. Protected actions such as sending messages, deleting data and publishing still require the user's authorization.
+
+## Repository map
+
+| Folder | Contents |
+| --- | --- |
+| `skills/` | Core operating procedures and additional assistant utilities. |
+| `plugins/` | Package descriptions and reviewed lists of files to distribute. |
+| `examples/` | Placeholder private configuration and a short startup instruction. |
+| `scripts/`, `tests/` | Configuration checks, task-instruction rendering, package building and tests. |
+| `docs/`, `releases/` | Setup, examples, provenance and verification records. |
+
+Writer’s Packet and Pocock Handoff are separate packages. Distill and the plugin-building utility are source utilities; their presence here does not install them in the core plugin. See [source ownership and migration](docs/source-migration-2026-10-03.md) for provenance. Long Form integrations live in [Long Form](https://github.com/phinneywood/long-form), and strategy companions live in [Strategy Factory](https://github.com/phinneywood/strategy-factory).
 
 ## License and privacy
 
-Original work is licensed under [MIT](LICENSE). Preserve the [Pocock Handoff upstream license](skills/pocock-handoff/LICENSE) when redistributing it.
+Original work is [MIT licensed](LICENSE). Pocock Handoff retains its [upstream MIT notice](skills/pocock-handoff/LICENSE). The current core ZIP and newly built packages include the root license; package file lists keep unreviewed additions out of archives. Historical archives are retained unchanged.
 
-Keep real configuration, document or board targets, full task prompts, rollback records and personal deployment links in a private repository. Follow the [repository hygiene procedure](docs/repository-hygiene.md) for ongoing checks.
+Keep real configuration, account targets, task registrations, rollback records and credentials private. Public examples use placeholders and grant no maintenance permissions. Follow the [repository hygiene procedure](docs/repository-hygiene.md) when reviewing changes.

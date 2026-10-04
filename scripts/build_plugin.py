@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from pathlib import PurePosixPath
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +22,16 @@ def build(plugin: str, skills: list[str], destination: Path) -> Path:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if manifest.get("name") != plugin or not VERSION.fullmatch(str(manifest.get("version", ""))):
         raise ValueError("manifest name or semantic version is invalid")
+    # The reviewed file list is build metadata, not part of the installed plugin.
+    # New files in a skill folder do not silently enter a public archive.
+    file_list = json.loads((manifest_path.parent / "package-files.json").read_text(encoding="utf-8"))
+    if not isinstance(file_list, list) or any(not isinstance(path, str) for path in file_list):
+        raise ValueError("package-files.json must be a list of reviewed source paths")
+    if len(file_list) != len(set(file_list)) or "LICENSE" not in file_list:
+        raise ValueError("reviewed file list must be unique and include the root LICENSE")
+    listed_skills = {PurePosixPath(path).parts[1] for path in file_list if len(PurePosixPath(path).parts) > 2 and PurePosixPath(path).parts[0] == "skills"}
+    if listed_skills != set(skills):
+        raise ValueError("requested skills must match the reviewed package file list")
     entries = [("plugin.json", manifest_path)]
     apps_file = manifest.get("extensions", {}).get("com.openai", {}).get("apps")
     if apps_file:
@@ -32,14 +43,26 @@ def build(plugin: str, skills: list[str], destination: Path) -> Path:
             raise ValueError("app mapping must reference registered app IDs")
         entries.append((".app.json", apps_path))
     for name in skills:
-        source = ROOT / "skills" / name
-        if not (source / "SKILL.md").is_file():
-            raise ValueError(f"missing skills/{name}/SKILL.md")
-        for path in sorted(source.rglob("*")):
-            if path.is_symlink():
-                raise ValueError(f"symlink not supported: {path}")
-            if path.is_file() and "__pycache__" not in path.parts and path.suffix != ".pyc":
-                entries.append((f"skills/{name}/{path.relative_to(source).as_posix()}", path))
+        if f"skills/{name}/SKILL.md" not in file_list:
+            raise ValueError(f"missing reviewed skills/{name}/SKILL.md")
+    for relative in sorted(file_list):
+        parsed = PurePosixPath(relative)
+        if parsed.is_absolute() or ".." in parsed.parts or relative != parsed.as_posix():
+            raise ValueError("reviewed paths must be canonical relative paths")
+        path = ROOT / relative
+        if any(parent.is_symlink() for parent in (path, *path.parents) if parent != ROOT):
+            raise ValueError(f"symlink not supported: {relative}")
+        if not path.is_file() or not path.resolve().is_relative_to(ROOT.resolve()):
+            raise ValueError(f"missing or escaping reviewed file: {relative}")
+        entries.append((relative, path))
+    archive_names = [name for name, _ in entries]
+    if len(archive_names) != len(set(archive_names)):
+        raise ValueError("reviewed files collide with reserved archive names")
+    for archive_name, source in entries:
+        if any(parent.is_symlink() for parent in (source, *source.parents) if parent != ROOT):
+            raise ValueError(f"symlink not supported: {archive_name}")
+        if not source.is_file() or not source.resolve().is_relative_to(ROOT.resolve()):
+            raise ValueError(f"missing or escaping archive input: {archive_name}")
     destination.mkdir(parents=True, exist_ok=True)
     output = destination / f"{plugin}-{manifest['version']}.zip"
     with ZipFile(output, "w", ZIP_DEFLATED) as archive:
@@ -55,11 +78,17 @@ def build(plugin: str, skills: list[str], destination: Path) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("plugin")
-    parser.add_argument("--skills", nargs="+", help="skill folder names; defaults to plugin name")
+    parser.add_argument("--skills", nargs="+", help="skill folder names; defaults to the reviewed package file list")
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
     args = parser.parse_args()
     try:
-        build(args.plugin, args.skills or [args.plugin], args.output)
+        if not NAME.fullmatch(args.plugin):
+            raise ValueError("plugin name must be a lowercase hyphenated name")
+        reviewed = json.loads((ROOT / "plugins" / args.plugin / "package-files.json").read_text(encoding="utf-8"))
+        if not isinstance(reviewed, list) or any(not isinstance(path, str) for path in reviewed):
+            raise ValueError("package-files.json must be a list of reviewed source paths")
+        skills = args.skills or sorted({PurePosixPath(path).parts[1] for path in reviewed if len(PurePosixPath(path).parts) > 2 and PurePosixPath(path).parts[0] == "skills"})
+        build(args.plugin, skills, args.output)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Cannot build plugin: {exc}", file=sys.stderr)
         return 1

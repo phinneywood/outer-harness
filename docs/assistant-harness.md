@@ -1,5 +1,7 @@
 # Assistant Harness
 
+For a plain-language introduction, start with the [repository overview](../README.md), [worked example](worked-example.md), or [first-run guide](first-run.md). This page records the detailed operating and installation boundaries.
+
 Version 1 contains four self-contained skills: `assistant-harness` (recover and route), `portfolio-pm` (daily/reconcile/completion/email modes), `knowledge-reconcile` (knowledge and document maintenance), and `harness-audit` (read-only checks and authorized migration). Existing service plugins provide tools. The package adds no server or database.
 
 ## Configure privately
@@ -16,7 +18,7 @@ Keep concise reusable facts, preferences, standing decisions and outcomes in pri
 
 ## Build and install
 
-Build with `python3 scripts/build_plugin.py assistant-harness --skills assistant-harness portfolio-pm knowledge-reconcile harness-audit`. The archive contains only the manifest and reviewed skills; private config and account connection mappings are excluded. The current package manifest is **1.1.0**; see `releases/assistant-harness-1.1.0.md` for release-specific validation and limits.
+Use Python 3.10 or newer. Build with `python3 scripts/build_plugin.py assistant-harness`. The archive contains the manifest, root MIT license and files from the reviewed package list; private config and account connection mappings are excluded. The current package manifest is **1.1.1**; see [its release record](../releases/assistant-harness-1.1.1.md) for packaging validation and [the 1.1.0 record](../releases/assistant-harness-1.1.0.md) for the earlier scoped-retrieval checks. The four core skill instructions are unchanged between these versions.
 
 Personal Work skills and cloud plugins are separate installations. Use the supported skill-creator workflow for personal installation. For ordinary Chat, upload the archive through ChatGPT Plugins → Personal → Add → Upload plugin archive, install it, and test in a fresh Chat. Keep one installed identity for future updates. Public Directory submission/review is a separate operation; no public listing is implied by this repository.
 
@@ -34,7 +36,7 @@ Other personal briefs, release watches and chat-cleanup jobs remain separate. Au
 
 ## Verify
 
-Run `python3 -m unittest discover -s tests -p 'test_harness_config.py' -v`. Use the fixtures for independent prepare-only behavior checks. Also verify native discovery/readability, explicit workflow behavior, first independent saved-task execution and device-specific loading separately. Preserve actual outputs; a static validator or plausible answer is not runtime proof.
+Run `python3 -m unittest discover -s tests -v` for configuration and packaging checks. Use the fixtures for independent prepare-only behavior checks. Also verify native discovery/readability, explicit workflow behavior, first independent saved-task execution and device-specific loading separately. Preserve actual outputs; a static validator or plausible answer is not runtime proof.
 
 Accept context recovery only when a fresh conversation reads the current authoritative records. Accept reconciliation when real writes are read back, repeated runs avoid duplicate effects, failed writes do not advance progress, and account/sharing boundaries hold. Test iOS separately. See the release record for observed gates and remaining limits.
 

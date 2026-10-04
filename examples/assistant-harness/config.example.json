@@ -1,29 +1,81 @@
 {
   "schema_version": 1,
   "timezone": "America/Los_Angeles",
-  "transport": {"mode": "mcp_only"},
-  "accounts": {"assistant_google": "assistant@example.invalid", "personal_google_access": false},
+  "transport": {
+    "mode": "mcp_only"
+  },
+  "accounts": {
+    "assistant_google": "assistant@example.invalid",
+    "personal_google_access": false
+  },
   "sources": {
-    "projects": {"provider": "trello", "url": "https://trello.com/b/EXAMPLE1/example-board"},
-    "knowledge": {"provider": "github", "repository": "example/knowledge"},
-    "documents": {"provider": "google_drive", "default_folder_id": "EXAMPLE_FOLDER"},
-    "calendar": {"provider": "google_calendar", "scope": "assistant_managed_only"}
+    "projects": {
+      "provider": "trello",
+      "url": "https://trello.com/b/EXAMPLE1/example-board"
+    },
+    "knowledge": {
+      "provider": "github",
+      "repository": "example/knowledge"
+    },
+    "documents": {
+      "provider": "google_drive",
+      "default_folder_id": "EXAMPLE_FOLDER"
+    },
+    "calendar": {
+      "provider": "google_calendar",
+      "scope": "assistant_managed_only"
+    }
   },
   "policies": {
-    "portfolio": {"url": "https://docs.google.com/document/d/EXAMPLE_MANUAL/edit"},
-    "knowledge_rules": {"repository": "example/knowledge", "path": "AGENTS.md"},
-    "knowledge_workflow": {"repository": "example/knowledge", "path": "systems/knowledge-store.md"},
-    "checkpoint": {"repository": "example/knowledge", "path": "systems/knowledge-reconciler-enabled.md"}
+    "portfolio": {
+      "url": "https://docs.google.com/document/d/EXAMPLE_MANUAL/edit"
+    },
+    "knowledge_rules": {
+      "repository": "example/knowledge",
+      "path": "AGENTS.md"
+    },
+    "knowledge_workflow": {
+      "repository": "example/knowledge",
+      "path": "systems/knowledge-store.md"
+    },
+    "checkpoint": {
+      "repository": "example/knowledge",
+      "path": "systems/knowledge-reconciler-enabled.md"
+    }
   },
   "permissions": {
     "project_updates": false,
     "knowledge_updates": false,
     "document_organization": false,
     "calendar_record_confirmed_commitments": false,
-    "requires_explicit_approval": ["send_email", "send_messages", "delete_data", "change_access", "purchase", "book_or_reschedule", "accept_terms", "publish_public_content"]
+    "requires_explicit_approval": [
+      "send_email",
+      "send_messages",
+      "delete_data",
+      "change_access",
+      "purchase",
+      "book_or_reschedule",
+      "accept_terms",
+      "publish_public_content"
+    ]
   },
-  "portfolio": {"wip_active": 3, "wip_ready": 5, "weekly_review_day": "SU", "brief_style": "one_phone_screen", "public_presence_review": false},
-  "notifications": {"routine_maintenance_success": "silent", "errors": "report_all", "daily_brief": "always"},
-  "deployment": {"repository": "example/assistant-skills", "ref": "0000000000000000000000000000000000000000", "plugin": "assistant-harness", "version": "1.0.0"},
+  "portfolio": {
+    "wip_active": 3,
+    "wip_ready": 5,
+    "weekly_review_day": "SU",
+    "brief_style": "one_phone_screen",
+    "public_presence_review": false
+  },
+  "notifications": {
+    "routine_maintenance_success": "silent",
+    "errors": "report_all",
+    "daily_brief": "always"
+  },
+  "deployment": {
+    "repository": "phinneywood/outer-harness",
+    "ref": "0000000000000000000000000000000000000000",
+    "plugin": "assistant-harness",
+    "version": "1.1.1"
+  },
   "task_registry": []
 }
