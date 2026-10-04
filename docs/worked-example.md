@@ -39,6 +39,22 @@ Packaging tests check license inclusion, exact reviewed content and source-byte 
 
 A fresh, sanitized live workflow should record its trigger, records consulted, actual effects, readback and remaining limits. Repeat-run and failure-recovery behavior need direct evidence. Private account targets, full task prompts and personal records belong in private verification notes.
 
+## Observed interactive example — October 3, 2026
+
+This public presentation update provides a bounded real example of the workflow. It was an assisted Work session using the existing 1.1.0 instructions, not a fresh installation test of 1.1.1 or an independent scheduled run.
+
+| Stage | Observed action and result |
+| --- | --- |
+| Trigger | The user approved a GitHub pin, a second website project, and repository improvements understandable to newcomers. |
+| Recover current records | The assistant read the configured policies, relevant existing project record and current repository source before making changes. Private policy and account details are omitted here. |
+| Prepare and check | The revised overview, setup guides and packaging passed 17 local harness tests. The website passed 12 tests and its production build. |
+| Publish | The [repository update](https://github.com/phinneywood/outer-harness/commit/625f47572087ca46b6c32b03aa0c89314c981828) and [website update](https://github.com/phinneywood/personal-site/commit/d98597b2401576f8105c3df837dc6d6272a1c4bb) were published. Both hosted verification workflows passed. |
+| Verify actual effects | Vercel reported a completed deployment. The live page showed Outer Harness below Long Form, linking to the public repository; profile readback showed it as the second pin. The [1.1.1 release](https://github.com/phinneywood/outer-harness/releases/tag/assistant-harness-v1.1.1) included the verified ZIP. |
+| Reconcile project state | The existing relevant task record was updated with the observed outcome and evidence links, then read back with an exact description match. No replacement task was created. |
+| Recover an interrupted action | An accidental denial blocked the release attachment upload. The assistant reported the block, resumed after the user clarified the denial, and observed the uploaded asset before publishing. |
+
+This establishes one assisted publication and reconciliation sequence. It does not show that the instructions caused each behavior, prove required-source failure handling, or establish repeat-run, fresh-Chat, device or unattended reliability. Those remain separate checks.
+
 ## Glossary
 
 | Term | Meaning in this project |
