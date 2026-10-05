@@ -1,0 +1,4 @@
+interface:
+  display_name: "Outer Harness"
+  short_description: "Pick up ongoing work from its current records"
+  default_prompt: "Use $outer-harness to continue this work with my private configuration and the smallest authoritative source."

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('build_plugin', ROOT / 'scripts/build_plugin.py')
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
-SKILLS = ['assistant-harness', 'portfolio-pm', 'knowledge-reconcile', 'harness-audit']
+SKILLS = ['assistant-harness', 'portfolio-pm', 'knowledge-reconcile', 'harness-audit', 'outer-harness']
 
 
 class PluginArchiveTests(unittest.TestCase):
@@ -43,7 +43,7 @@ class PluginArchiveTests(unittest.TestCase):
             self.assertEqual(archive.read('LICENSE'), (self.root / 'LICENSE').read_bytes())
             for name in reviewed:
                 self.assertEqual(archive.read(name), (self.root / name).read_bytes())
-            self.assertEqual(json.loads(archive.read('plugin.json'))['version'], '1.1.1')
+            self.assertEqual(json.loads(archive.read('plugin.json'))['version'], '1.2.0')
 
     def test_unreviewed_private_file_does_not_enter_archive(self):
         (self.root / 'skills/assistant-harness/private-config.json').write_text('{"not_for_distribution": true}')

@@ -7,5 +7,12 @@
   "skills/knowledge-reconcile/SKILL.md",
   "skills/knowledge-reconcile/agents/openai.yaml",
   "skills/portfolio-pm/SKILL.md",
-  "skills/portfolio-pm/agents/openai.yaml"
+  "skills/portfolio-pm/agents/openai.yaml",
+  "skills/outer-harness/SKILL.md",
+  "skills/outer-harness/agents/openai.yaml",
+  "skills/outer-harness/references/configuration.md",
+  "skills/outer-harness/references/knowledge.md",
+  "skills/outer-harness/references/onboarding.md",
+  "skills/outer-harness/references/projects.md",
+  "skills/outer-harness/references/scheduled-tasks.md"
 ]
