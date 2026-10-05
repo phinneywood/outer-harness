@@ -1,4 +1,0 @@
-interface:
-  display_name: "Knowledge Reconciler"
-  short_description: "Maintain durable knowledge and organize documents"
-  default_prompt: "Use $knowledge-reconcile to maintain my external knowledge and documents."

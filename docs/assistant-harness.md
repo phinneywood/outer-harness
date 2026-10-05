@@ -2,7 +2,7 @@
 
 For a plain-language introduction, start with the [repository overview](../README.md), [worked example](worked-example.md), or [first-run guide](first-run.md). This page records the detailed operating and installation boundaries.
 
-Version 1 contains four self-contained skills: `assistant-harness` (recover and route), `portfolio-pm` (daily/reconcile/completion/email modes), `knowledge-reconcile` (knowledge and document maintenance), and `harness-audit` (read-only checks and authorized migration). Existing service plugins provide tools. The package adds no server or database.
+Version 2 contains `outer-harness` (recovery, projects, knowledge and conversational onboarding, with five focused references) and `harness-audit` (advanced audits). The three previous compatibility skills are retired; old releases retain their historical instructions. Existing service plugins provide tools. The package adds no server or database.
 
 ## Configure privately
 
@@ -18,11 +18,11 @@ Keep concise reusable facts, preferences, standing decisions and outcomes in pri
 
 ## Build and install
 
-Use Python 3.10 or newer. Build with `python3 scripts/build_plugin.py assistant-harness`. The archive contains the manifest, root MIT license and files from the reviewed package list; private config and account connection mappings are excluded. The current package manifest is **1.1.1**; see [its release record](../releases/assistant-harness-1.1.1.md) for packaging validation and [the 1.1.0 record](../releases/assistant-harness-1.1.0.md) for the earlier scoped-retrieval checks. The four core skill instructions are unchanged between these versions.
+Use Python 3.10 or newer. Build with `python3 scripts/build_plugin.py assistant-harness`. The archive contains the manifest, root MIT license and files from the reviewed package list; private config and account connection mappings are excluded. The current package manifest is **2.0.0**; see [its release record](../releases/assistant-harness-2.0.0.md) for packaging validation and [the 1.1.0 record](../releases/assistant-harness-1.1.0.md) for the earlier scoped-retrieval checks. The unified core and audit instructions are unchanged from 1.2.0.
 
 Personal Work skills and cloud plugins are separate installations. Use the supported skill-creator workflow for personal installation. For ordinary Chat, upload the archive through ChatGPT Plugins → Personal → Add → Upload plugin archive, install it, and test in a fresh Chat. Keep one installed identity for future updates. Public Directory submission/review is a separate operation; no public listing is implied by this repository.
 
-For ordinary Chat, explicitly select Assistant Harness and the service plugins needed for the work (for example, GitHub and Trello), and supply your private `config_locator`. The original 1.0.0 recovery test loaded all four skills, then read real configuration/project records with GitHub and Trello selected; that remains historical evidence for that package. Version 1.1.0 changes scoped retrieval policy and has its own static release validation, but native-reader loading, automatic activation, ordinary-Chat write behavior and device-specific behavior should be verified separately after upgrading. Installing a skills-only plugin does not activate every connected service. See `releases/assistant-harness-1.0.0.md` and `releases/assistant-harness-1.1.0.md` for the evidence recorded for each release.
+For ordinary Chat, explicitly select Outer Harness and the service plugins needed for the work (for example, GitHub and Trello), and supply your private `config_locator`. The original 1.0.0 recovery test loaded all four skills, then read real configuration/project records with GitHub and Trello selected; that remains historical evidence for that package. Version 1.1.0 changes scoped retrieval policy and has its own static release validation, but native-reader loading, automatic activation, ordinary-Chat write behavior and device-specific behavior should be verified separately after upgrading. Installing a skills-only plugin does not activate every connected service. See `releases/assistant-harness-1.0.0.md` and `releases/assistant-harness-1.1.0.md` for the evidence recorded for each release.
 
 Current official instructions: https://developers.openai.com/plugins/build/plugins and https://learn.chatgpt.com/docs/build-skills. GitHub source changes alone do not update an uploaded plugin.
 
@@ -42,4 +42,4 @@ Accept context recovery only when a fresh conversation reads the current authori
 
 ## Repository hygiene
 
-Run the existing `harness-audit` skill with the [repository hygiene procedure](repository-hygiene.md) loaded from a pinned source revision. Keep target repositories, policy exceptions, checkpoints and the task registration in private configuration. Schedule a separate low-frequency read-only audit unless an existing audit already covers it; preserve other registrations. This adds a shared scheduled recipe without changing the four-skill package.
+Run the existing `harness-audit` skill with the [repository hygiene procedure](repository-hygiene.md) loaded from a pinned source revision. Keep target repositories, policy exceptions, checkpoints and the task registration in private configuration. Schedule a separate low-frequency read-only audit unless an existing audit already covers it; preserve other registrations. This adds a shared scheduled recipe with the two-skill package.

@@ -26,7 +26,7 @@ This table illustrates the intended workflow; it is not evidence of a completed 
 
 ## The four core workflows
 
-The downloadable **Assistant Harness** plugin bundles these four skills:
+The downloadable **Outer Harness** plugin provides these workflows through `outer-harness`, with `harness-audit` as the separate audit utility.
 
 | Workflow | Everyday purpose |
 | --- | --- |
@@ -42,13 +42,13 @@ The supported setup uses GitHub for durable notes, Trello for project state, Goo
 - **Start with the design:** [worked example](docs/worked-example.md) and [glossary](docs/worked-example.md#glossary).
 - **Try the tools locally:** [first-run guide](docs/first-run.md#try-the-local-tools), using synthetic configuration and no connected accounts.
 - **Use it with ChatGPT:** follow the [read-only first-run guide](docs/first-run.md#use-it-with-chatgpt). Bring your own private configuration, policies and authorized service connections.
-- **Download the package:** [Assistant Harness 1.1.1 ZIP](releases/assistant-harness-1.1.1.zip), with its [release record](releases/assistant-harness-1.1.1.md).
+- **Download the package:** [Outer Harness 2.0.0 ZIP](releases/assistant-harness-2.0.0.zip), with its [release record](releases/assistant-harness-2.0.0.md).
 
 ## What is verified
 
 The configuration and packaging tests check code behavior and archive contents. They do not establish that an assistant will follow every instruction, that scheduled work will execute reliably, or that every device supports the same installation flow.
 
-The [1.1.0 record](releases/assistant-harness-1.1.0.md) covers static and prepare-only checks; the [1.0.0 record](releases/assistant-harness-1.0.0.md) contains earlier, separately scoped runtime evidence. **1.1.1 repairs packaging and onboarding; it does not add a new runtime or prove unattended reliability.** Installing an updated package remains separate from updating this repository.
+The [1.1.0 record](releases/assistant-harness-1.1.0.md) covers static and prepare-only checks; the [1.0.0 record](releases/assistant-harness-1.0.0.md) contains earlier, separately scoped runtime evidence. [2.0.0](releases/assistant-harness-2.0.0.md) retires the three compatibility skills while retaining the unified instructions from 1.2.0. Its packaging checks do not prove unattended reliability. Installing an updated package remains separate from updating this repository.
 
 Permission settings and skills guide the assistant. They do not intercept tool calls or replace the host's permissions and approval controls. Protected actions such as sending messages, deleting data and publishing still require the user's authorization.
 

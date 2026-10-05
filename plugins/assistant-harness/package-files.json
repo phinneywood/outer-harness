@@ -1,13 +1,7 @@
 [
   "LICENSE",
-  "skills/assistant-harness/SKILL.md",
-  "skills/assistant-harness/agents/openai.yaml",
   "skills/harness-audit/SKILL.md",
   "skills/harness-audit/agents/openai.yaml",
-  "skills/knowledge-reconcile/SKILL.md",
-  "skills/knowledge-reconcile/agents/openai.yaml",
-  "skills/portfolio-pm/SKILL.md",
-  "skills/portfolio-pm/agents/openai.yaml",
   "skills/outer-harness/SKILL.md",
   "skills/outer-harness/agents/openai.yaml",
   "skills/outer-harness/references/configuration.md",
