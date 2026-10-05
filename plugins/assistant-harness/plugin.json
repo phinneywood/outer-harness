@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "assistant-harness",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Recover context, reconcile projects and knowledge, and audit a personal assistant setup using existing connected services.",
   "author": {
     "name": "Antonio Skilton"

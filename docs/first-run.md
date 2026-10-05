@@ -14,7 +14,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/build_plugin.py assistant-harness
 ```
 
-The first command should report that the configuration is valid. The tests check configuration and archive behavior. The last command writes `dist/assistant-harness-1.1.1.zip` and prints its SHA-256 fingerprint. It should match the [release record](../releases/assistant-harness-1.1.1.md).
+The first command should report that the configuration is valid. The tests check configuration and archive behavior. The last command writes `dist/assistant-harness-2.0.0.zip` and prints its SHA-256 fingerprint. It should match the [release record](../releases/assistant-harness-2.0.0.md).
 
 The example's account addresses, document IDs and source revision are placeholders. Validation proves its structure is acceptable; it does not make the targets usable or grant authority. The all-zero revision must be replaced with a real, verified source commit before use. On GitHub, open the repository’s latest commit, then copy its full 40-character SHA with the copy button beside the commit identifier. Use the commit you actually inspected, rather than a moving branch name.
 
@@ -30,7 +30,7 @@ This only prints text. The example targets and all-zero revision are placeholder
 
 This route requires a ChatGPT account with the relevant installation and connected-service features. Account availability and device behavior need their own checks.
 
-1. Download [Assistant Harness 1.1.1](../releases/assistant-harness-1.1.1.zip). The repository is called Outer Harness; the installed core package is called Assistant Harness.
+1. Download [Assistant Harness 2.0.0](../releases/assistant-harness-2.0.0.zip). The installed plugin is displayed as Outer Harness; its package identity remains `assistant-harness`.
 2. Use ChatGPT's supported plugin archive upload flow. Personal Work skills are a separate installation route; do not assume installing one installs the other. See the [setup guide](assistant-harness.md#build-and-install) and its official documentation links.
 3. Connect the services the workflow needs. This package does not connect accounts. The supported profile uses GitHub, Trello and assistant-owned Google services; it does not request personal Google account access.
 4. Copy [the example config](../examples/assistant-harness/config.example.json) into a **private** GitHub repository. Replace the source targets and policy links with records you own and have authorized the assistant to use. Keep maintenance permissions `false` for the first check. Retain explicit approval for protected actions. Configuration is not a place to store credentials.
@@ -44,4 +44,4 @@ Only after the read-only path works should you enable narrowly authorized mainte
 
 Each `plugins/<package>/package-files.json` lists the source files reviewed for distribution. The builder includes the package manifest and those files, including the root license. Adding a file to a skill directory does not silently add it to an archive. Review and update the list when an intentional new resource belongs in a package.
 
-Version 1.1.1 changes distribution only: the four core skill instructions are unchanged from 1.1.0. Existing installations and saved-task source pins are not updated automatically by this checkout or archive.
+Version 2.0.0 changes distribution only: the four core skill instructions are unchanged from 1.1.0. Existing installations and saved-task source pins are not updated automatically by this checkout or archive.

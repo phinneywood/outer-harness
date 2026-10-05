@@ -20,4 +20,4 @@ jobs:
       - name: Check the published archive can be reproduced
         run: |
           python3 scripts/build_plugin.py assistant-harness
-          cmp dist/assistant-harness-1.2.0.zip releases/assistant-harness-1.2.0.zip
+          cmp dist/assistant-harness-2.0.0.zip releases/assistant-harness-2.0.0.zip

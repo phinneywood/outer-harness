@@ -60,7 +60,7 @@ class HarnessConfigTests(unittest.TestCase):
         self.assertTrue(module.validate(candidate))
 
     def test_renders_pinned_prompt_with_correct_workflow_and_failure_policy(self):
-        for role,skill,mode in (('daily','portfolio-pm','daily'),('completion-watch','portfolio-pm','completion-watch'),('knowledge','knowledge-reconcile',None)):
+        for role,skill,mode in (('daily','outer-harness','daily'),('completion-watch','outer-harness','completion-watch'),('knowledge','outer-harness','knowledge')):
             prompt = module.render(self.config,self.locator,role)
             self.assertIn('$'+skill,prompt)
             self.assertIn(self.locator,prompt)
